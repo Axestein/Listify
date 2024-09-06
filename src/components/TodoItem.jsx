@@ -1,11 +1,12 @@
-// src/components/TodoItem.jsx
 import React, { useState } from 'react';
 import { FiEdit, FiTrash, FiCheckCircle } from 'react-icons/fi';
 import { AiOutlineCalendar } from 'react-icons/ai';
+import { BiTime } from 'react-icons/bi';
 
-const TodoItem = ({ todo, deleteTodo, toggleComplete, editTodo, setDate }) => {
+const TodoItem = ({ todo, deleteTodo, toggleComplete, editTodo, setDate, setTime }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newText, setNewText] = useState(todo.text);
+  const [time, setTimeLocal] = useState(todo.time || ''); // Initialize with existing time
 
   const handleEdit = (e) => {
     e.preventDefault();
@@ -15,6 +16,11 @@ const TodoItem = ({ todo, deleteTodo, toggleComplete, editTodo, setDate }) => {
 
   const handleDateChange = (e) => {
     setDate(todo.id, e.target.value);
+  };
+
+  const handleTimeChange = (e) => {
+    setTime(todo.id, e.target.value);
+    setTimeLocal(e.target.value);
   };
 
   return (
@@ -46,20 +52,40 @@ const TodoItem = ({ todo, deleteTodo, toggleComplete, editTodo, setDate }) => {
           </span>
         )}
 
-        {/* Display date if selected */}
-        {todo.date && (
-          <span className="ml-4 text-sm text-gray-400 bg-gray-800 px-2 py-1 rounded-md border border-gray-600">
-            {new Date(todo.date).toLocaleDateString('en-GB', {
-              weekday: 'short',
-              day: '2-digit',
-              month: 'short',
-              year: 'numeric',
-            })}
-          </span>
-        )}
+        {/* Display date and time if selected */}
+        <div className="flex items-center space-x-2">
+          {todo.date && (
+            <span className="ml-4 text-sm text-gray-400 bg-gray-800 px-2 py-1 rounded-md border border-gray-600">
+              {new Date(todo.date).toLocaleDateString('en-GB', {
+                weekday: 'short',
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric',
+              })}
+            </span>
+          )}
+          {todo.time && (
+            <span className="ml-2 text-sm text-gray-400 bg-gray-800 px-2 py-1 rounded-md border border-gray-600">
+              {new Date(`1970-01-01T${todo.time}:00`).toLocaleTimeString('en-GB', {
+                hour: '2-digit',
+                minute: '2-digit',
+              })}
+            </span>
+          )}
+        </div>
       </div>
 
       <div className="flex items-center space-x-2">
+        {/* Clock icon for time */}
+        <label className="relative text-gray-400 hover:text-white cursor-pointer">
+          <BiTime size={24} />
+          <input
+            type="time"
+            value={time}
+            onChange={handleTimeChange}
+            className="absolute top-0 left-0 opacity-0 w-full h-full cursor-pointer"
+          />
+        </label>
         {/* Calendar icon */}
         <label className="relative text-gray-400 hover:text-white cursor-pointer">
           <AiOutlineCalendar size={24} />

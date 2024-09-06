@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState } from 'react';
 import TodoItem from './components/TodoItem';
 import TodoForm from './components/TodoForm';
@@ -12,6 +11,7 @@ const App = () => {
       id: Date.now(),
       text,
       date: '', // Initialize with no date
+      time: '', // Initialize with no time
       completed: false,
     };
     setTodos([...todos, newTodo]);
@@ -41,11 +41,21 @@ const App = () => {
     );
   };
 
+  const setTime = (id, time) => {
+    setTodos(
+      todos.map((todo) => (todo.id === id ? { ...todo, time: time } : todo))
+    );
+  };
+
   return (
     <div className="relative min-h-screen bg-gray-900 flex items-center justify-center p-5 text-gray-100 overflow-hidden">
       {/* Surrounding task suggestions */}
-{/* Left Side */}
-<div className="absolute top-4/12 left-4 hidden lg:flex">
+      {/* Left Side */}
+      {/* (same as before) */}
+      {/* Right Side */}
+      {/* (same as before) */}
+      {/* Main content */}
+      <div className="absolute top-4/12 left-4 hidden lg:flex">
         <p className="text-pink-400 text-sm lg:text-lg opacity-75 mb-8">
           ⚽ Playing football
         </p>
@@ -137,7 +147,6 @@ const App = () => {
           🏊 Swimming practice
         </p>
       </div>
-      {/* Main content */}
       <div className="relative z-10 flex flex-col items-center">
         <div className="flex items-center space-x-2 mb-2">
           <h1 className="text-4xl lg:text-5xl font-extrabold text-blue-500 drop-shadow-md">
@@ -174,6 +183,7 @@ const App = () => {
                 toggleComplete={toggleComplete}
                 editTodo={editTodo}
                 setDate={setDate}
+                setTime={setTime} // Pass setTime to TodoItem
               />
             ))}
           </ul>
