@@ -97,8 +97,8 @@ const App = () => {
           💻 Coding practice
         </p>
       </div>
-      <div className="absolute top-3/4 right-28 hidden lg:flex">
-        <p className="text-teal-400 text-sm lg:text-lg opacity-75 mt-8 mb-2">
+      <div className="absolute bottom-1/4 right-16 hidden lg:flex">
+        <p className="text-teal-400 text-sm lg:text-lg opacity-75 mb-2">
           📖 Reading a book
         </p>
       </div>
@@ -107,8 +107,8 @@ const App = () => {
           🎨 Drawing
         </p>
       </div>
-      <div className="absolute bottom-1/3 right-10 hidden lg:flex">
-        <p className="text-indigo-400 text-sm lg:text-lg opacity-75 mb-2">
+      <div className="absolute top-3/4 right-28  hidden lg:flex">
+        <p className="text-indigo-400 text-sm lg:text-lg opacity-75 mt-8 mb-2">
           📅 Planning schedule
         </p>
       </div>
@@ -117,7 +117,7 @@ const App = () => {
           🧘 Meditation
         </p>
       </div>
-      <div className="absolute bottom-1/4 right-16 hidden lg:flex">
+      <div className="absolute bottom-1/3 right-10 hidden lg:flex">
         <p className="text-yellow-400 text-sm lg:text-lg opacity-75 mb-2">
           📷 Photography
         </p>
