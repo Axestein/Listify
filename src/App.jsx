@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import TodoItem from './components/TodoItem';
 import TodoForm from './components/TodoForm';
 import appicon from './assets/appicon.png';
-
+import grid from './assets/grid.png';
 const App = () => {
   const [todos, setTodos] = useState([]);
 
@@ -55,6 +55,11 @@ const App = () => {
       {/* Right Side */}
       {/* (same as before) */}
       {/* Main content */}
+      <img
+  src={grid}
+  alt="Background Grid"
+  className="absolute inset-0 w-full h-full object-cover z-0 opacity-30 scale-75 transform hidden lg:block" // Use scale to adjust the grid size
+/>
       <div className="absolute top-4/12 left-4 hidden lg:flex">
         <p className="text-pink-400 text-sm lg:text-lg opacity-75 mb-8">
           ⚽ Playing football
