@@ -1,5 +1,7 @@
 # Listify <img src="https://github.com/user-attachments/assets/f7a5c1f4-2eb6-4dc0-b9c8-f1d13f86bc5f" alt="appicon" width="25" height="25">
 
+![Group 34063](https://github.com/user-attachments/assets/2c0da709-ddb0-41f1-9fde-c5632d54b4b7)
+
 Manage your tasks effectively with Listify — your go-to tool for staying organized and on top of your day. Listify is a simple yet powerful to-do list web app that allows you to add, edit, delete, and manage your tasks with ease.
 
 ## Project Description
