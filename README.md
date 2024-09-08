@@ -61,22 +61,6 @@ listify/
 ├── package.json
 └── README.md
 ```
-
-## Contributing
-
-Contributions are welcome! If you have suggestions or find bugs, feel free to open an issue or submit a pull request. To contribute:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Commit your changes (`git commit -m 'Add feature'`).
-5. Push to the branch (`git push origin feature-branch`).
-6. Open a pull request.
-
-## Documentation
-
-For detailed documentation on how to use Listify, please refer to the project's [Wiki](#) (link to your documentation if available).
-
 ## Contact
 
 If you have any questions, suggestions, or feedback, please reach out:
